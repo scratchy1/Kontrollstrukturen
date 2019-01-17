@@ -1,0 +1,59 @@
+public class Kontrollstrukturen2 {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        int n = Integer.parseInt(args[0]);
+        int s = Integer.parseInt(args[1]);
+        int ggt = 1;
+        
+        try {
+            
+            if (s == 0) {
+                throw new ArithmeticException();
+            }
+            
+            while (s != 0) {
+                int rest = n % s;
+                // 9 mod 6 =3.
+                n = s;
+                // also num1=6.
+                s = rest;
+                // also num2=3.
+            }
+            ggt = n;
+            // also ggt=3.
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Falsche Argument-Anzahl.");
+        } catch (NumberFormatException e) {
+            System.out.println("Mind. ein Argument ist kein int-Wert.");
+        } catch (ArithmeticException e) {
+            System.out.println("Division durch null.");
+        }
+        // Hier prüfen, ob ggt aus {1,...,4} else default
+        switch (ggt)
+
+        {
+        case 1:
+            ggt = 1;
+            System.out.println("ggT ist 1");
+            break;
+        case 2:
+            ggt = 2;
+            System.out.println("ggT ist 2");
+            break;
+        case 3:
+            ggt = 3;
+            System.out.println("ggT ist 3");
+            break;
+        case 4:
+            ggt = 4;
+            System.out.println("ggT ist 4");
+            break;
+        default:
+            System.out.println("ggT ist ausserhalb von {1,...,4} ");
+            break;
+        }
+    }
+
+}
